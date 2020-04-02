@@ -1,0 +1,15 @@
+\begin{tabular}{l|cc|c} \hline\hline
+Follow advice & Coefficient & SE & Diff. p-value \\ 
+(Subsamples) & (1) & (2) & (3) \\ \hline
+Gender & & &  \\
+\hspace{0.3cm} Female &0.1788 & (0.0087) &  \\
+\hspace{0.3cm} Male &0.2815 & (0.0079) & 0.0000 \\
+Age group & & &  \\
+\hspace{0.3cm} Young &0.3617 & (0.0180) &  \\
+\hspace{0.3cm} Middle age &0.2745 & (0.0079) & 0.0000 \\
+\hspace{0.3cm} Old &0.0729 & (0.0055) & 0.0000 \\
+Income percentile & & &  \\
+\hspace{0.3cm} Below 50th &0.1386 & (0.0154) &  \\
+\hspace{0.3cm} Above 50th &0.2538 & (0.0064) & 0.0000 \\
+\hline\hline
+\end{tabular}

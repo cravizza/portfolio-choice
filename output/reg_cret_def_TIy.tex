@@ -1,0 +1,15 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular*}{.65\hsize}{@{\hskip\tabcolsep\extracolsep\fill}l*{2}{lc}}
+\toprule
+                &\multicolumn{2}{c}{2 months}&\multicolumn{2}{c}{12 months}\\
+\midrule
+1st quartile    &    -0.04         &   (0.18)&    -1.27\sym{**} &   (0.41)\\
+diff.2nd quartile&     0.19         &   (0.22)&    -1.15\sym{*}  &   (0.44)\\
+diff.3rd quartile&     0.32         &   (0.21)&    -0.66         &   (0.35)\\
+diff.4th quartile&     0.92\sym{**} &   (0.31)&     1.06\sym{**} &   (0.39)\\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Clustered standard errors in parenthesis}\\
+\multicolumn{5}{l}{\footnotesize * for p$<$.05, ** for p$<$.01,and *** for p$<$.001}\\
+\end{tabular*}
+}

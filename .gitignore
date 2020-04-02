@@ -1,0 +1,16 @@
+*.gph
+*.dta
+*.pyc
+*.log
+raw/
+tools/
+info/
+log/
+paper/
+presentation/
+
+## Tex aux files
+*.log
+*.aux
+*.synctex.gz
+*.synctex.gz(busy)

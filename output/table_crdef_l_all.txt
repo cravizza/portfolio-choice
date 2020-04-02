@@ -1,0 +1,18 @@
+\begin{threeparttable}
+\begin{tabular}{l|cc|c|cc|c} \hline\hline
+Switchers & \multicolumn{3}{c|}{2 months} & \multicolumn{3}{c}{12 months} \\ \hline
+ & Coeff. & SE & Diff.p-value & Coeff. & SE & Diff.p-value \\ 
+ Subsamples & (1) & (2) & (3) & (4) & (5) & (6) \\ \hline
+Gender & & & & & & \\
+\hspace{0.3cm} Female   & -0.10  & (0.15) & & -1.85 & (0.46) &  \\
+\hspace{0.3cm} Male   & -0.07  & (0.16) & 0.68& -1.61 & (0.45) & 0.22 \\
+Age group & & & & & & \\
+\hspace{0.3cm} Young   & -0.24  & (0.24) & & -3.13 & (0.65) &  \\
+\hspace{0.3cm} Middle age   & -0.08  & (0.17) & 0.10& -1.63 & (0.48) & 0.00 \\
+\hspace{0.3cm} Old   & 0.02  & (0.13) & 0.01& -0.77 & (0.38) & 0.00 \\
+Income percentile & & & & & & \\
+\hspace{0.3cm} Below 50th   & -0.12  & (0.18) & & -2.57 & (0.53) &  \\
+\hspace{0.3cm} Above 50th   & -0.06  & (0.15) & 0.40& -0.92 & (0.38) & 0.00 \\
+ \hline Mean & -0.09 & \multicolumn{2}{l|}{  } & -1.71 & \multicolumn{2}{l}{  } \\
+\hline\hline
+\end{tabular}

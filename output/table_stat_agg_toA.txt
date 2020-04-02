@@ -1,0 +1,9 @@
+\begin{threeparttable}
+\begin{tabular}{l|ccc} \hline\hline
+ Statistic       &        & Newey-West &         \\        
+ from E to A     & Coeff. & Std.Error  & p-value \\        
+                 & (1)    & (2)        & (3)     \\ \hline 
+Flow from E to A & 0.0299  & (0.0138)    & 0.0338   \\        
+Constant         & -0.0117  & (0.0072)    & 0.1079   \\        
+\hline\hline
+\end{tabular}

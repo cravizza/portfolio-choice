@@ -1,0 +1,18 @@
+\begin{threeparttable}
+\begin{tabular}{l|cc|c|cc|c} \hline\hline
+Followers & \multicolumn{3}{c|}{2 months} & \multicolumn{3}{c}{12 months} \\ \hline
+ & Coeff. & SE & Diff.p-value & Coeff. & SE & Diff.p-value \\ 
+ Subsamples & (1) & (2) & (3) & (4) & (5) & (6) \\ \hline
+Gender & & & & & & \\
+\hspace{0.3cm} Female   & -1.57  & (0.75) & & -0.89 & (0.82) &  \\
+\hspace{0.3cm} Male   & -1.76  & (0.78) & 0.52& -0.45 & (1.02) & 0.30 \\
+Age group & & & & & & \\
+\hspace{0.3cm} Young   & -2.07  & (0.50) & & -0.25 & (1.03) &  \\
+\hspace{0.3cm} Middle age   & -1.78  & (0.92) & 0.49& -0.77 & (1.00) & 0.38 \\
+\hspace{0.3cm} Old   & -1.07  & (0.65) & 0.02& -0.34 & (0.73) & 0.89 \\
+Income percentile & & & & & & \\
+\hspace{0.3cm} Below 50th   & -1.31  & (0.76) & & -0.55 & (0.80) &  \\
+\hspace{0.3cm} Above 50th   & -1.82  & (0.77) & 0.12& -0.63 & (1.01) & 0.87 \\
+ \hline Mean & -1.69 & \multicolumn{2}{l|}{  } & -0.61 & \multicolumn{2}{l}{  } \\
+\hline\hline
+\end{tabular}

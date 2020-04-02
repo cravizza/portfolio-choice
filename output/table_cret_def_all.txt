@@ -1,0 +1,23 @@
+\begin{threeparttable}
+\begin{tabular}{l|cc|c|cc|c} \hline\hline
+ & \multicolumn{3}{c|}{2 months} & \multicolumn{3}{c}{12 months} \\ \hline
+Switchers & Coeff. & SE & Diff.p-value & Coeff. & SE & Diff.p-value \\ 
+ Subsamples & (1) & (2) & (3) & (4) & (5) & (6) \\ \hline
+Gender & & & & & & \\
+\hspace{0.3cm} Female   & 0.35  & (0.26) & & -1.24 & (0.50) &  \\
+\hspace{0.3cm} Male   & 0.61  & (0.29) & 0.00& -0.82 & (0.50) & 0.03 \\
+Age group & & & & & & \\
+\hspace{0.3cm} Young   & 0.57  & (0.47) & & -2.21 & (0.65) &  \\
+\hspace{0.3cm} Middle age   & 0.59  & (0.29) & 0.93& -0.78 & (0.54) & 0.00 \\
+\hspace{0.3cm} Old   & 0.23  & (0.17) & 0.44& -0.51 & (0.41) & 0.01 \\
+Income quartile & & & & & & \\
+\hspace{0.3cm} 1st   & 0.08  & (0.29) & & -2.28 & (0.56) &  \\
+\hspace{0.3cm} 2nd   & 0.35  & (0.35) & 0.16& -2.01 & (0.64) & 0.45 \\
+\hspace{0.3cm} 3rd   & 0.80  & (0.36) & 0.02& -0.58 & (0.52) & 0.00 \\
+\hspace{0.3cm} 4th   & 1.01  & (0.32) & 0.01& 1.11 & (0.50) & 0.00 \\
+\hline\hline
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item[*] Notes: Columns (1) and (2) show the cumulative returns 2 months after the swithc by demographic groups. Columns (4) and (5) present them after 12 months. Columns (3) and (6) show the p-values that test for the difference between the corresponding coefficient and the baseline.
+\end{tablenotes}
+\end{threeparttable}

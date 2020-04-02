@@ -1,0 +1,22 @@
+\begin{threeparttable}
+\begin{tabular}{l|cc|c} \hline\hline
+ & Coeff. & SE & Diff.p-value \\ 
+Subsamples & (1) & (2) & (3) \\ \hline
+Gender & & &  \\
+\hspace{0.3cm} Female &0.60  & (0.18) &      \\ 
+\hspace{0.3cm} Male &0.70  & (0.21) &   0.05   \\ 
+Age group & & &  \\
+\hspace{0.3cm} Young &0.75  & (0.26) &      \\ 
+\hspace{0.3cm} Middle age &0.72  & (0.21) &   0.78   \\ 
+\hspace{0.3cm} Old &0.45  & (0.13) &   0.06   \\ 
+Income quartile & & &  \\
+\hspace{0.3cm} 1st &0.37  & (0.16) &      \\ 
+\hspace{0.3cm} 2nd &0.67  & (0.22) &   0.00   \\ 
+\hspace{0.3cm} 3rd &0.88  & (0.24) &   0.00   \\ 
+\hspace{0.3cm} 4th &0.81  & (0.24) &   0.01   \\ 
+\hline\hline
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item[*] Notes: Columns (1) and (2) show the statistic by different demographic groups. Columns (3) show the p-values that test for the difference between the corresponding coefficient and the baseline.
+\end{tablenotes}
+\end{threeparttable}

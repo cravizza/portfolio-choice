@@ -1,0 +1,17 @@
+\begin{threeparttable}
+\begin{tabular}{l|cc|c|cc|c} \hline\hline
+ & \multicolumn{3}{c|}{Followers} & \multicolumn{3}{c}{Following} \\ \hline
+ & Coeff. & SE & Diff.p-value & Coeff. & SE & Diff.p-value \\ 
+ Subsamples & (1) & (2) & (3) & (4) & (5) & (6) \\ \hline
+Gender & & & & & & \\
+\hspace{0.3cm} Female   & 0.0196  & (0.0014) & & 0.1788 & (0.0087) &  \\
+\hspace{0.3cm} Male   & 0.0305  & (0.0015) & 0.0000& 0.2815 & (0.0079) & 0.0000 \\
+Age group & & & & & & \\
+\hspace{0.3cm} Young   & 0.0260  & (0.0025) & & 0.3617 & (0.0180) &  \\
+\hspace{0.3cm} Middle age   & 0.0275  & (0.0014) & 0.6053& 0.2745 & (0.0079) & 0.0000 \\
+\hspace{0.3cm} Old   & 0.0206  & (0.0020) & 0.0849& 0.0729 & (0.0055) & 0.0000 \\
+Income percentile & & & & & & \\
+\hspace{0.3cm} Below 50th   & 0.0057  & (0.0008) & & 0.1386 & (0.0154) &  \\
+\hspace{0.3cm} Above 50th   & 0.0395  & (0.0017) & 0.0000& 0.2538 & (0.0064) & 0.0000 \\
+\hline\hline
+\end{tabular}

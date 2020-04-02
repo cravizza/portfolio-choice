@@ -1,0 +1,21 @@
+\begin{threeparttable}
+\begin{tabular}{l|cc|c|cc|c} \hline\hline
+Followers & \multicolumn{3}{c|}{2 months} & \multicolumn{3}{c}{12 months} \\ \hline
+ & Coeff. & SE & Diff.p-value & Coeff. & SE & Diff.p-value \\ 
+ Subsamples & (1) & (2) & (3) & (4) & (5) & (6) \\ \hline
+Gender & & & & & & \\
+\hspace{0.3cm} Female   & 1.23  & (1.30) & & 2.48 & (2.13) &  \\
+\hspace{0.3cm} Male   & 1.58  & (1.36) & 0.06& 3.44 & (2.27) & 0.01 \\
+Age group & & & & & & \\
+\hspace{0.3cm} Young   & 0.96  & (1.20) & & 2.49 & (1.53) &  \\
+\hspace{0.3cm} Middle age   & 1.63  & (1.48) & 0.28& 3.40 & (2.52) & 0.48 \\
+\hspace{0.3cm} Old   & 1.28  & (1.00) & 0.52& 2.56 & (1.73) & 0.90 \\
+Income percentile & & & & & & \\
+\hspace{0.3cm} Below 50th   & 1.63  & (1.17) & & 3.09 & (1.98) &  \\
+\hspace{0.3cm} Above 50th   & 1.37  & (1.39) & 0.51& 3.00 & (2.25) & 0.88 \\
+\hline\hline
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item[*] Notes: Columns (1) and (2) show the cumulative returns 2 months after the swithc by demographic groups. Columns (4) and (5) present them after 12 months. Columns (3) and (6) show the p-values that test for the difference between the corresponding coefficient and the baseline.
+\end{tablenotes}
+\end{threeparttable}

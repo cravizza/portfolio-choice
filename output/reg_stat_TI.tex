@@ -1,0 +1,15 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular*}{.5\hsize}{@{\hskip\tabcolsep\extracolsep\fill}l*{1}{lc}}
+\toprule
+                &\multicolumn{2}{c}{Income quartile}\\
+\midrule
+1st quartile    &     0.35\sym{*}  &   (0.14)\\
+diff.2nd quartile&     0.32\sym{**} &   (0.10)\\
+diff.3rd quartile&     0.53\sym{***}&   (0.14)\\
+diff.4th quartile&     0.46\sym{**} &   (0.17)\\
+\bottomrule
+\multicolumn{3}{l}{\footnotesize Clustered standard errors in parenthesis}\\
+\multicolumn{3}{l}{\footnotesize * for p$<$.05, ** for p$<$.01,and *** for p$<$.001}\\
+\end{tabular*}
+}
