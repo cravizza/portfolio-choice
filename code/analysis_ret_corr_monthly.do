@@ -1,6 +1,7 @@
 clear all
 global data "../../../Data/SP"
 global general "../"
+global wb = "graphregion(color(white)) bgcolor(white)"
 set more off
 
 program main
@@ -79,12 +80,12 @@ syntax, [drop_stuff(string) filename(string)]
 		qui sum avg_corr`X'
 		scalar_txt, number(`r(mean)') filename(r`X'_corr`filename') decimal(0)
 		local mincorr=string(`r(mean)')
-		xtline Fund_`X', ov legend(off) name(graph_f`X') ///
+		xtline Fund_`X', ${wb} ov legend(off) name(graph_f`X') ///
 		ylabel(#5, format(%9.2f)) yscale(range(-.15 .2)) ///
 		tlabel(#3) title("Fund `X' (corr: 0.`mincorr')")
 	}
 	
-	graph combine graph_fA graph_fB graph_fC graph_fD graph_fE , ///
+	graph combine graph_fA graph_fB graph_fC graph_fD graph_fE , graphregion(color(white)) ///
 	rows(2) col(3) //title("Real returns") ysize(4) xsize(5.5) iscale(1.3) 
 	 
 	graph export "$general/output/returns_monthly`filename'.png", replace

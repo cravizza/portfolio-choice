@@ -3,6 +3,7 @@
 clear all
 global data "../../../Data/SP"
 global general "../"
+global wb = "graphregion(color(white)) bgcolor(white)"
 set more off
 
 program main
@@ -95,7 +96,7 @@ program              graph_fyf_freq
 	replace sw_f15_`den'_freq = . if date==ym(2007,1)
 	replace sw_f51_`den'_freq = . if date==ym(2007,1)
 	sort date 
-	tw line sw_f`from'`to'_`den'_freq sw_fund_`den'_freq date `if_opt',  ///
+	tw line sw_f`from'`to'_`den'_freq sw_fund_`den'_freq date `if_opt', ${wb} ///
 		ylabel(#4, labs(small)) ytitle("Number of switches over total `denominator'")  ///
 		tlabel(#8, labs(small)) ttitle("Month") /// *ymtick(0(0.005)0.015)
 		tline(`dates') 
@@ -181,7 +182,7 @@ program              graph_follower_N_sw
 		la var foll_by_TI_a500  "Below 50th" 
 		la var foll_by_TI_a501  "Above 50th"
 		foreach var in gender age_def TI_a50 {
-			tw line foll_by_`var'* foll_by_n n_sw_fyf , legend(row(1) symx(7)) lp( "-#.." shortdash solid) ///
+			tw line foll_by_`var'* foll_by_n n_sw_fyf , ${wb} legend(row(1) symx(7)) lp( "-#.." shortdash solid) ///
 			 ytitle("Share of followers") xlabel(1(1)8) xtitle("Switches following FyF advice")  ///
 			 ysize(4) xsize(4)
 			graph export "$general\output\foll_sw_n_`var'.png", replace

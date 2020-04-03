@@ -3,6 +3,7 @@
 clear all
 global data "../../../Data/SP"
 global general "../"
+global wb = "graphregion(color(white)) bgcolor(white)"
 set more off
 
 program main
@@ -106,12 +107,12 @@ program              graph_cret_12m
 		gen cr_m  = (cr_to_`sw_t'_m   - crdef_`sw_t'_m )*100 if dif_max==12
 		
 		rename TI_ev_50 Percentile
-		binscatter  cr_m dif_`sw_t' if dif_max==12, line(connect)  by(Percentile) ///
+		binscatter  cr_m dif_`sw_t' if dif_max==12, ${wb} line(connect)  by(Percentile) ///
 			xtitle(Months) ytitle("Cumulative return of destination vs default") /// 
 			xlab(#12) ylab(#6) discrete  yscale(r(0 -2.5)) ///		 
 			savegraph("$general/output/crdef_0-12_income.png") replace  
 			
-		binscatter  cr_m dif_`sw_t' if dif_max==12 & fyf_follower==1, line(connect)  by(Percentile) ///
+		binscatter  cr_m dif_`sw_t' if dif_max==12 & fyf_follower==1, ${wb} line(connect)  by(Percentile) ///
 			xtitle(Months) ytitle("Cumulative return of destination vs default") /// 
 			xlab(#12) ylab(#6) discrete  yscale(r(0 -2.5)) ///		 
 			savegraph("$general/output/crdef_0-12_income_fyf.png") replace  	

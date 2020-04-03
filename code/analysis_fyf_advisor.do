@@ -3,6 +3,7 @@
 clear all
 global data "../../../Data/SP"
 global general "../"
+global wb = "graphregion(color(white)) bgcolor(white)"
 set more off
 
 program main
@@ -170,12 +171,12 @@ preserve
 		xtitle(Business days relative to placebo dates) ///
 		ytitle("Advisor's portfolio return with respect to 0.5A+0.5E (Placebo)") ylab(#8) yscale(r(-.0015 .0015)) ///
 		savegraph("$general/output/event_day_placebo.png") replace   
-	binscatter rdiffyf dif if event_windowA==1 & n_rec<=5, ///
+	binscatter rdiffyf dif if event_windowA==1 & n_rec<=5, ${wb} ///
 		line(connect) xlab(#15) discrete rd(-0.5)  /// 
 		xtitle(Business days relative to recommendation) ///
 		ytitle("Advisor's portfolio return with respect to 0.5A+0.5E") ylab(#5) yscale(r(-.004 .004)) ///
 		savegraph("$general/output/event_day_15.png") replace  	
-	binscatter rdiffyf dif if event_windowE==1 & n_rec>5, ///
+	binscatter rdiffyf dif if event_windowE==1 & n_rec>5, ${wb} ///
 		line(connect) xlab(#15) discrete rd(-0.5)  /// 
 		xtitle(Business days relative to recommendation)  ///
 		ytitle("Advisor's portfolio return with respect to 0.5A+0.5E") ylab(#5) yscale(r(-.004 .004)) ///
@@ -212,7 +213,7 @@ use "$general/raw/clean_fyf_rec_delays.dta", clear
 		la var cret_m_rA "Fund A"
 		la var cret_m_rE "Fund E"
 		la var cretAE "50% A + 50% E"
-	tw line cret_m_rfyf_0 cret_m_rfyf_2 cretAE date, ///
+	tw line cret_m_rfyf_0 cret_m_rfyf_2 cretAE date, ${wb} ///
 		lc(green green green) lp(shortdash "-#.." solid)  ///
 		ylabel(#6, labs(small)) ytitle("Cumulative return of FyF strategy")  ///
 		tlabel(`mindate'(6)`maxdate', labs(small)) ttitle("Month") legend(row(1) symx(10)) ///
@@ -222,7 +223,7 @@ use "$general/raw/clean_fyf_rec_delays.dta", clear
 		    "Delay 2 : `cr2'%" ///
 			, place(nw) box just(right) margin(l+1 t+1 b+1 r+2) width(33) )
 	graph export "$general\output\fyf_cret_all_delay_days.png", replace
-	tw line cret_m_rfyf_0 cret_m_rfyf_1 cret_m_rfyf_2 cret_m_rA cret_m_rE date, ////
+	tw line cret_m_rfyf_0 cret_m_rfyf_1 cret_m_rfyf_2 cret_m_rA cret_m_rE date, ${wb} ////
 		lc(green green green blue red) ///
 		lp(shortdash "-#.." solid longdash longdash) ///
 		ylabel(#6, labs(small)) ytitle("Cumulative return of FyF strategy")  ///

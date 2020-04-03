@@ -3,6 +3,7 @@
 clear all
 global data "../../../Data/SP"
 global general "../"
+global wb = "graphregion(color(white)) bgcolor(white)"
 set more off
 
 qui capture do "$general/tools/tools_database.do"
@@ -51,15 +52,15 @@ forvalues w = 1/`words' {
 	local j: word `w' of `levels'
 	sum difference if difference==`j'
 	local Nobs`j'=r(N)
-	cii `obsN' `Nobs`j''
+	cii prop `obsN' `Nobs`j''
 	replace lower = r(lb)*100 if difference==`j'
 	replace upper = r(ub)*100 if difference==`j'
 }
 
-twoway hist difference, discrete percent || rcap upper lower difference, sort legend(off)
+twoway hist difference, discrete percent || rcap upper lower difference, ${wb} sort legend(off)
 graph export "$general/output/TI_sw_comparison.png", replace
 
-twoway hist difference if N_sw_fund>0, discrete percent legend(off)
+twoway hist difference if N_sw_fund>0, ${wb} discrete percent legend(off)
 graph export "$general/output/TI_sw_comparison_sw.png", replace
 
 *hist difference2 if N_sw_fund>0, percent  

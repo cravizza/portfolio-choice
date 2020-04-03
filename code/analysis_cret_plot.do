@@ -1,6 +1,7 @@
 clear all
 global data "../../../Data/SP"
 global general "../"
+global wb = "graphregion(color(white)) bgcolor(white)"
 set more off
 
 program main
@@ -59,19 +60,19 @@ program              graph_follower_cret
 		}
 		sort date
 		* Graphs of cret
-		tw line crp_follower_l crp_non_follower_l crp_non_switcher_l date,  ///
+		tw line crp_follower_l crp_non_follower_l crp_non_switcher_l date, ${wb} ///
 			ylabel(#5, labs(small)) ytitle("Cumulative return")  lp(shortdash "-#.." solid) ///
 			tlabel(#6, labs(small)) ttitle("Months") /// //title("Cumulative return after first recommendation") ///
 			legend(label(1 "Followers") label(2 "Non-followers") label(3 "Non-switchers") row(1))
 		graph export "$general\output\cret_advice.png", replace
 		
-		tw line crp_follower_f crp_follower_l crp_def  date,  ///
+		tw line crp_follower_f crp_follower_l crp_def  date, ${wb} ///
 			ylabel(#5, labs(small)) ytitle("Cumulative return")  lp(shortdash "-#.." solid) ///
 			tlabel(#6, labs(small)) ttitle("Months") /// //title("Cumulative return after first recommendation") ///
 			legend(label(1 "First day") label(2 "Last day") label(3 "Default") row(1))
 		graph export "$general\output\cret_advice_rob.png", replace
 		
-		tw line crp_follower_rich_l crp_follower_not_l crp_def date,  ///
+		tw line crp_follower_rich_l crp_follower_not_l crp_def date, ${wb} ///
 			ylabel(#5, labs(small)) ytitle("Cumulative return")  lp(shortdash "-#.." solid) ///
 			tlabel(#6, labs(small)) ttitle("Months") /// //title("Cumulative return after first recommendation") ///
 			legend(label(1 "High income") label(2 "Low income") label(3 "Default") row(1))

@@ -3,6 +3,7 @@
 clear all
 global data "../../../Data/SP"
 global general "../"
+global wb = "graphregion(color(white)) bgcolor(white)"
 set more off
 
 program main
@@ -36,7 +37,7 @@ program              graph_switches
 		local obs `r(N)'
 		duplicates drop date sw_fund_freq, force
 		sort date
-		tw (line sw_fund_freq date) (line sw_firmfund_freq date),  ///
+		tw (line sw_fund_freq date) (line sw_firmfund_freq date), ${wb} ///
 			ylabel(#4, labs(small)) ytitle("Number of switches over total accounts")  ///
 			tlabel(2007m1(12)2013m12, labs(small)) ttitle("Month") /// *ymtick(0(0.005)0.015)
 			legend(label(1 "All fund switches") label(2 "Fund switches when switching firm")) 
@@ -60,7 +61,7 @@ program              graph_cret
 			replace   `var' = 0 if `var'==.
 		}
 		sort sw_months
-		tw (line cr_m_pdef cr_m_p_l            sw_months),  ///
+		tw (line cr_m_pdef cr_m_p_l            sw_months), ${wb} ///
 			ylabel(#5, labs(small)) ytitle("Cumulative return")  ///
 			tlabel(0(12)75, labs(small)) ttitle("Months after first switch") ///
 			legend(label(1 "Default") label(2 "Actual"))
@@ -77,7 +78,7 @@ capture program drop graph_money
 program              graph_money
 	preserve
 		collapse (sum) f1 f2 f3 f4 f5, by(age_def)
-		graph bar (mean) f1 f2 f3 f4 f5, over(age_def)  perc ///
+		graph bar (mean) f1 f2 f3 f4 f5, ${wb} over(age_def)  perc ///
 			ylabel(#4, labs(small)) ytitle("% of money in each fund")  legend(label(1 "Fund A") ///
 			label(2 "Fund B") label(3 "Fund C") label(4 "Fund D") label(5 "Fund E") row(1) symxsize(6)  )
 		graph export "$general\output\money.png", replace
