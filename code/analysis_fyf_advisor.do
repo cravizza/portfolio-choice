@@ -31,6 +31,8 @@ program main
 	graph_fyf_cret_daily, cutoff(2011,06) delay_days(2)
 	graph_fyf_cret_daily, cutoff(2012,04) delay_days(2)
 	graph_fyf_cret_daily, cutoff(2015,01) delay_days(2)
+		graph_fyf_cret_daily, cutoff(2011,06) delay_days(0)
+
 	
 	graph_fyf_dailyES
 	graph_fyf_ret_delay							   
@@ -118,9 +120,10 @@ capture program drop graph_fyf_cret_daily
 program              graph_fyf_cret_daily
 	syntax, cutoff(string) delay_days(integer)
 	preserve
-	qui fyf_rec, delay(`delay_days')
+	*qui fyf_rec, delay(`delay_days')
 	use "$general/raw/clean_sharevalue.dta", clear
 	merge 1:1 date afp_all using "$general/raw/clean_fyf_rec_delay`delay_days'.dta", nogen assert(3)
+	rename rfyf ret_fyf
 	collapse (mean) r1 r5 ret_fyf, by(date)
 	keep if date>=ym(2011,06)
 	keep if date>=ym(`cutoff')
@@ -137,17 +140,25 @@ program              graph_fyf_cret_daily
 		local crfyf : disp round(float(`r(max)'),0.001)*100
 		qui sum cret_m_r1
 		local minret `r(min)'
+		local maxret `r(max)'
 		qui sum date
 		local mindate: disp %tm r(min)
 		local mindate = trim("`mindate'")
 		local maxdate: disp %tm r(max)
-	tw line cret_m_r1 cret_m_r5  cret_m_ret_fyf date, lp(shortdash "-#.." solid) ///
+		if "`cutoff'"=="2015,01" {
+			local box_y = .3
+		}
+		else {
+			local box_y = `minret'
+		}
+	tw line cret_m_r1 cret_m_r5  cret_m_ret_fyf date, ${wb} ///
+			lc(green green green) lp(shortdash "-#.." solid) ///
 			ylabel(-.1(.1).5, labs(small)) ytitle("Cumulative return")  ///
 			tlabel(`mindate'(6)`maxdate', labs(small)) ttitle("Month")  ///
 			legend(row(1)) ///
 			note("Note: cumulative return for different portofolios, beginning to follow advice on `mindate'," ///
 			     " and considering a delay of `delay_days' days to implement the switch.") ///
-			ttext(`minret' `maxdate' ///
+			ttext(`box_y' `maxdate' ///
 				"Cumulative returns""over the entire period" "Fund A: `crA'%"  ///
 				"Fund E: `crE'%"  "FyF : `crfyf'%" ///
 				, place(nw) box just(right) margin(l+1 t+1 b+1 r+2) width(33) )
